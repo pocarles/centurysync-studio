@@ -3,7 +3,7 @@ import { CONTACT, SITE_NAME } from "@/lib/constants";
 export function Footer() {
   return (
     <footer className="bg-charcoal text-cream/80">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8 py-16">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand */}
           <div>
@@ -65,7 +65,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-cream/10 text-center text-sm text-cream/40">
+        <div className="mt-16 pt-8 border-t border-cream/10 text-center text-sm text-cream/40">
           &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
         </div>
       </div>

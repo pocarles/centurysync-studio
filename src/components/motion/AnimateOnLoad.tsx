@@ -19,9 +19,9 @@ export function AnimateOnLoad({
       initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: shouldReduceMotion ? 0 : 0.6,
+        duration: shouldReduceMotion ? 0 : 0.8,
         delay: shouldReduceMotion ? 0 : delay,
-        ease: [0.215, 0.61, 0.355, 1],
+        ease: [0.16, 1, 0.3, 1],
       }}
       className={className}
     >

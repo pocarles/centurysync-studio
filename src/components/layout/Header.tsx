@@ -27,7 +27,7 @@ export function Header({ onOpenContact }: { onOpenContact: () => void }) {
   return (
     <nav
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled ? "glass shadow-sm" : "bg-transparent"
       )}
     >
@@ -56,7 +56,7 @@ export function Header({ onOpenContact }: { onOpenContact: () => void }) {
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onOpenContact}
-              className="btn-shine inline-flex items-center px-5 py-2.5 bg-charcoal text-white font-semibold rounded-full text-sm transition-all duration-150 hover:-translate-y-px hover:shadow-lg"
+              className="btn-shine inline-flex items-center px-5 py-2.5 bg-charcoal text-white font-semibold rounded-full text-sm transition-all duration-200 hover:-translate-y-px hover:shadow-lg"
             >
               Get Started
             </button>
@@ -102,7 +102,7 @@ export function Header({ onOpenContact }: { onOpenContact: () => void }) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="sm:hidden overflow-hidden border-t border-border-light"
           >
             <div className="glass px-6 py-4">

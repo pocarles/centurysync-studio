@@ -12,18 +12,18 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | AI Systems That Augment Your Business`,
+    default: `${SITE_NAME} | AI Systems for Palm Beach County Businesses`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Business-driven workflows, strengthened by intentional AI. Led by Pierre-Olivier Carles, 25 years of real business experience.",
+    "AI systems and operational workflows for Palm Beach County businesses. Real estate, law firms, and finance \u2014 built with intention by a West Palm Beach team led by Pierre-Olivier Carles.",
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | AI Systems That Augment Your Business`,
+    title: `${SITE_NAME} | AI Systems for Palm Beach County Businesses`,
     description:
-      "Business-driven workflows, strengthened by intentional AI.",
+      "Operational workflows and intelligent tools for real estate, law firms, and finance in Palm Beach County.",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
@@ -55,11 +55,11 @@ function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         name: SITE_NAME,
         url: SITE_URL,
         description:
-          "AI systems consultancy specializing in business-driven workflows and intentional AI.",
+          "AI systems consultancy serving Palm Beach County businesses in real estate, legal, and financial services.",
         founder: {
           "@type": "Person",
           name: "Pierre-Olivier Carles",
@@ -69,13 +69,27 @@ function JsonLd() {
           telephone: "+15615624300",
           email: "po@centurysync.com",
           contactType: "sales",
+          areaServed: {
+            "@type": "AdministrativeArea",
+            name: "Palm Beach County, FL",
+          },
         },
         address: {
           "@type": "PostalAddress",
           streetAddress: "100-110 Century Blvd, Suite 202",
           addressLocality: "West Palm Beach",
           addressRegion: "FL",
+          postalCode: "33417",
           addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 26.6647,
+          longitude: -80.115,
+        },
+        areaServed: {
+          "@type": "AdministrativeArea",
+          name: "Palm Beach County",
         },
       },
       {
@@ -87,8 +101,11 @@ function JsonLd() {
         "@type": "ProfessionalService",
         name: SITE_NAME,
         description:
-          "We build AI systems that augment your business — operational workflows, supervised processes, and tools teams actually adopt.",
-        areaServed: "Worldwide",
+          "We build AI systems that augment your business \u2014 operational workflows, supervised processes, and tools teams actually adopt.",
+        areaServed: {
+          "@type": "AdministrativeArea",
+          name: "Palm Beach County, FL",
+        },
         serviceType: [
           "AI Systems Development",
           "Business Process Automation",

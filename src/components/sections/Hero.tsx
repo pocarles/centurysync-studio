@@ -4,7 +4,7 @@ import { hero } from "@/lib/content";
 
 export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+    <section className="relative pt-36 pb-24 md:pt-48 md:pb-40 overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: "radial-gradient(circle, #152237 1px, transparent 1px)",
@@ -14,13 +14,13 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
       <Container className="relative">
         <div className="max-w-3xl mx-auto text-center">
           <AnimateOnLoad delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-navy leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-navy leading-[1.08]">
               {hero.headline}
             </h1>
           </AnimateOnLoad>
 
           <AnimateOnLoad delay={0.25}>
-            <p className="mt-6 text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl mx-auto">
+            <p className="mt-6 text-lg md:text-xl text-text-secondary leading-relaxed font-light max-w-xl mx-auto">
               {hero.subheadline}
             </p>
           </AnimateOnLoad>
@@ -28,7 +28,7 @@ export function Hero({ onOpenContact }: { onOpenContact: () => void }) {
           <AnimateOnLoad delay={0.4}>
             <button
               onClick={onOpenContact}
-              className="btn-shine mt-8 inline-flex items-center px-8 py-4 bg-charcoal text-white font-semibold rounded-full text-base transition-all duration-150 hover:-translate-y-px hover:shadow-lg"
+              className="btn-shine mt-10 inline-flex items-center px-8 py-4 bg-charcoal text-white font-semibold rounded-full text-base transition-all duration-200 hover:-translate-y-px hover:shadow-lg"
             >
               {hero.cta}
               <svg

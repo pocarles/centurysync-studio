@@ -9,7 +9,7 @@ import { techPartners } from "@/lib/content";
 
 export function TechPartners() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-24 md:py-32 lg:py-40 bg-white">
       <Container>
         <SectionHeading
           title={techPartners.title}
@@ -19,7 +19,7 @@ export function TechPartners() {
         <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center justify-items-center">
           {techPartners.logos.map((logo) => (
             <StaggerItem key={logo.name}>
-              <div className="flex items-center justify-center h-10 px-4 opacity-40 hover:opacity-100 transition-opacity duration-200">
+              <div className="flex items-center justify-center h-10 px-4 opacity-40 hover:opacity-100 transition-opacity duration-500">
                 <Image
                   src={`/images/partners/${logo.file}`}
                   alt={logo.name}

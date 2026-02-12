@@ -7,19 +7,19 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const childVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
-      ease: [0.215, 0.61, 0.355, 1],
+      duration: 0.7,
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 };

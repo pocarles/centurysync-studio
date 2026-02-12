@@ -9,7 +9,7 @@ export function TrustedBySoftr({
   onOpenContact: () => void;
 }) {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-24 md:py-32 lg:py-40 bg-white">
       <Container>
         <FadeInView className="max-w-2xl mx-auto text-center">
           {/* Badge */}
@@ -23,17 +23,17 @@ export function TrustedBySoftr({
             />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-navy">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy">
             {trustedBySoftr.title}
           </h2>
 
-          <p className="mt-4 text-lg text-text-secondary leading-relaxed">
+          <p className="mt-4 text-lg text-text-secondary leading-relaxed font-light">
             {trustedBySoftr.description}
           </p>
 
           <button
             onClick={onOpenContact}
-            className="btn-shine mt-8 inline-flex items-center px-8 py-4 bg-charcoal text-white font-semibold rounded-full text-base transition-all duration-150 hover:-translate-y-px hover:shadow-lg"
+            className="btn-shine mt-8 inline-flex items-center px-8 py-4 bg-charcoal text-white font-semibold rounded-full text-base transition-all duration-200 hover:-translate-y-px hover:shadow-lg"
           >
             {trustedBySoftr.cta}
             <svg

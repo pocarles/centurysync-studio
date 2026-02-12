@@ -30,7 +30,7 @@ export function Testimonials() {
   }, [paused, next]);
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-24 md:py-32 lg:py-40">
       <Container>
         <SectionHeading
           label={testimonials.label}
@@ -43,14 +43,14 @@ export function Testimonials() {
           onMouseLeave={() => setPaused(false)}
         >
           {/* Quote */}
-          <div className="min-h-[260px] flex items-center">
+          <div className="min-h-[280px] flex items-center rounded-2xl bg-terracotta/[0.03] px-8 py-10">
             <AnimatePresence mode="wait">
               <motion.blockquote
                 key={current}
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={shouldReduceMotion ? {} : { opacity: 0, y: -10 }}
-                transition={{ duration: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-center"
               >
                 <p className="text-lg md:text-xl text-navy leading-relaxed italic">
