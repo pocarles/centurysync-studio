@@ -36,6 +36,9 @@ export function ContactSection() {
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error("Failed");
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq("track", "Lead");
+      }
       setState("success");
       form.reset();
     } catch {
