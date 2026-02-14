@@ -39,6 +39,12 @@ export function ContactSection() {
       if (typeof window !== "undefined" && window.fbq) {
         window.fbq("track", "Lead");
       }
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          event_category: "form",
+          event_label: "contact_form",
+        });
+      }
       setState("success");
       form.reset();
     } catch {
