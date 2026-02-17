@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { Container } from "@/components/layout/Container";
 import { FadeInView } from "@/components/motion/FadeInView";
-import { WEBHOOK_URL, CONTACT } from "@/lib/constants";
+import { CONTACT } from "@/lib/constants";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -30,21 +30,30 @@ export function ContactSection() {
     };
 
     try {
-      const res = await fetch(WEBHOOK_URL, {
+      const eventId =
+        typeof crypto !== "undefined" && "randomUUID" in crypto
+          ? crypto.randomUUID()
+          : String(Date.now());
+
+      const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, eventId }),
       });
       if (!res.ok) throw new Error("Failed");
-      if (typeof window !== "undefined" && window.fbq) {
-        window.fbq("track", "Lead");
+
+      // Browser-side events for immediate feedback + CAPI dedupe using same eventId
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "Lead", {}, { eventID: eventId });
       }
-      if (typeof window !== "undefined" && typeof window.gtag === "function") {
-        window.gtag("event", "generate_lead", {
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "generate_lead", {
           event_category: "form",
           event_label: "contact_form",
+          value: 1,
         });
       }
+
       setState("success");
       form.reset();
     } catch {
